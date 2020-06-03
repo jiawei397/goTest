@@ -10,7 +10,7 @@
             "args": [
                 // Ask msbuild to generate full paths for file names.
                 "run",
-                "src/hello.go"
+                "hello/gin/ginTest.go"
             ],
             "group": "go",
             "presentation": {
