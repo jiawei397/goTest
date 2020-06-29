@@ -9,7 +9,7 @@ import (
 )
 
 type File struct {
-	_id      string
+	_id      string `bson:"id"`
 	count    int
 	deleted  bool
 	name     string
@@ -43,7 +43,8 @@ func main() {
 	c.Find(map[string]string{"name": "node-v14.3.0.pkg"}).All(&files)
 	fmt.Println(files)
 
-	file := File{}
+	// file := File{}
+	var file map[string]interface{}
 	c.Find(bson.M{"name": "node-v14.3.0.pkg"}).One(&file)
-	fmt.Println(file)
+	fmt.Println(file["url"])
 }
